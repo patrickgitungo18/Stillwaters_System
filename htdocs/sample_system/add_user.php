@@ -7,6 +7,7 @@
     </head>
     <body>
         <h2>Add User</h2>
+        <a href="display_users.php">Display Users</a>
         <form method="post" action="">
             <table>
                 <tr>
