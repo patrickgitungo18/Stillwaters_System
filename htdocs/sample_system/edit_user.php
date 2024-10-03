@@ -9,8 +9,9 @@
         <h2>Update User</h2>
         <a href="display_users.php">Display Users</a>
 
-    //retrieve data from the database
+   
         <?php
+         //retrieve data from the database
             $id = $_GET['id'];
             $query = "SELECT * FROM user WHERE user_id = '$id'";
             $result = mysqli_query($conn, $query);
@@ -58,9 +59,9 @@
             $query1 = "UPDATE user SET first_name = '$firstname', last_name = '$lastname', email = '$email', username = '$username', password = '$password' WHERE user_id = '$id'";
             
             //check the query if it is executed
-            $result1 = mysqli_query($conn, $query);
+            $result1 = mysqli_query($conn, $query1);
 
-            if($result1){
+            if($result1==TRUE){
                 echo "User Updated successfully";
             }else{
                 echo "Failed to update user data!!!";
