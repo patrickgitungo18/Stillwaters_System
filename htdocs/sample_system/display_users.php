@@ -15,6 +15,7 @@
                 <th>Email</th>
                 <th>Username</th>
                 <th>Password</th>
+                <th>Action</th>
             </tr>
             <?php
                 $query = "SELECT * FROM user";
@@ -27,6 +28,7 @@
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['username']; ?></td>
                 <td><?php echo $row['password']; ?></td>
+                <td><a href="edit_user.php?id=<?php echo $row['user_id']; ?>">Edit</a> | <a href="delete_user.php?id=<?php echo $row['user_id']; ?>">Delete</a></td>
             </tr>
             <?php
                 }
