@@ -19,15 +19,15 @@
                 </tr>
                 <tr>
                     <td>Email:</td>
-                    <td><input type="text" name="email"></td>
+                    <td><input type="text" name="email" placeholder="Enter your email"></td>
                 </tr>
                 <tr>
                     <td>Username:</td>
-                    <td><input type="text" name="username"></td>
+                    <td><input type="text" name="username" placeholder="Create username"></td>
                 </tr>
                 <tr>
                     <td>Password:</td>
-                    <td><input type="text" name="password"></td>
+                    <td><input type="text" name="password" placeholder="Create your password"></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -35,4 +35,26 @@
                 </tr>
             </table>
         </form>
+    <?php
+
+        if(isset($_POST['submit'])){
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $email = $_POST['email'];
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+
+            $query = "INSERT INTO user (first_name, last_name, email, username, password) VALUES ('$firstname', '$lastname', '$email', '$username', '$password')";
+            
+            //check the query if it is executed
+            $result = mysqli_query($conn, $query);
+
+            if($result){
+                echo "User added successfully";
+            }else{
+                echo "Failed to add user";
+            }
+        }
+
+    ?>
     </body>
