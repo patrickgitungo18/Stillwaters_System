@@ -8,6 +8,7 @@
     <body>
         <h2>Display Users</h2>
         <a href="add_user.php">Add User</a>
+        <a href="logout.php">Logout</a>
         <table border="1">
             <tr>
                 <th>First Name</th>
