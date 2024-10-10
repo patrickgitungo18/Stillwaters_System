@@ -1,5 +1,14 @@
 <?php
     include ("connection.php");
+
+    if(isset($_SESSION['username'])){
+        echo "<script>
+        alert('You are already logged in');
+        window.location.href='display_users.php';
+        </script>";
+        exit();
+    }
+    
 ?>
 <html>
     <head>
@@ -33,6 +42,7 @@
             $row = mysqli_fetch_array($result);
 
             if($row==true){
+                $_SESSION['username'] = $username;
                 echo "<script>window.location.href='display_users.php'</script>";
             }else{
                 echo "Invalid username or password";

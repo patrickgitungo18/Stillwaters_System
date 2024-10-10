@@ -1,5 +1,6 @@
 <?php
     include ("connection.php");
+    include ("checklogin.php");
 ?>
 <html>
     <head>

@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     $server = "127.0.0.1";
     $username = "mariadb";
     $password = "mariadb";
@@ -10,8 +10,6 @@
     //check the connection if successfull
     if (!$conn){
         die ("connection failed: ". mysqli_connect_error());
-    }else{
-        echo "database connected successfully!";
     }
 
 
